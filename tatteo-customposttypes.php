@@ -108,7 +108,7 @@ function studios_cpt() {
 		'description'           => __( 'A profile page for a tattoo studio', 'text_domain' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'thumbnail', 'revisions', 'custom-fields', 'page-attributes', 'post-formats' ),
-		'taxonomies'            => array( 'commision', 'tools', 'art_style', 'accomodation' ),
+		'taxonomies'            => array( 'comission', 'tools', 'art_style', 'accomodation' ),
 		'hierarchical'          => true,
 		'public'                => true,
 		'show_ui'               => true,
