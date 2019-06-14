@@ -246,7 +246,7 @@ function guest_spot_cpt() {
 add_action( 'init', 'guest_spot_cpt', 0 );
 
 // Register Custom Post Type - Studios
-function artists_cpt() {
+function artist_cpt() {
 
 	$labels = array(
 		'name'                  => _x( 'Artists', 'Post Type General Name', 'text_domain' ),
@@ -298,7 +298,7 @@ function artists_cpt() {
 		'capability_type'       => 'page',
 		'show_in_rest'          => true,
 	);
-	register_post_type( 'studio', $args );
+	register_post_type( 'artist', $args );
 
 }
 add_action( 'init', 'artist_cpt', 0 );
