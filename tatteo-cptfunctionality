@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name:     Tatteo Custom Post Types
+ * Plugin Name:     Tatteo Custom Post Types Functionality
  * Plugin URI:      tatteo.com
- * Description:     A plugin to generate Custom Post Types for Tatteo
+ * Description:     A plugin to generate Custom Post Types and Taxonomies for Tatteo
  * Author:          RED Academy
  * Author URI:      redacademy.com
  * Text Domain:     tatteo-customposttypes
@@ -13,6 +13,8 @@
  */
 
 // Your code starts here.
+
+//*CUSTOM POST TYPES*//
 
 // Register Custom Post Type - Reviews
 function review_cpt() {
@@ -302,3 +304,162 @@ function artist_cpt() {
 
 }
 add_action( 'init', 'artist_cpt', 0 );
+
+//*CUSTOM TAXONOMIES*//
+
+// Register Custom Taxonomy - Art Styles
+function custom_taxonomy_art_styles() {
+
+	$labels = array(
+		'name'                       => _x( 'Art Styles', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Art Style', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Art Style', 'text_domain' ),
+		'all_items'                  => __( 'All Art Styles', 'text_domain' ),
+		'parent_item'                => __( 'Parent Item', 'text_domain' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
+		'new_item_name'              => __( 'New Art Style', 'text_domain' ),
+		'add_new_item'               => __( 'Add New Art Style', 'text_domain' ),
+		'edit_item'                  => __( 'Edit Art Style', 'text_domain' ),
+		'update_item'                => __( 'Update Art Style', 'text_domain' ),
+		'view_item'                  => __( 'View Art Style', 'text_domain' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
+		'add_or_remove_items'        => __( 'Add or remove Art Style', 'text_domain' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
+		'popular_items'              => __( 'Popular Art Styles', 'text_domain' ),
+		'search_items'               => __( 'Search Art Styles', 'text_domain' ),
+		'not_found'                  => __( 'Not Found', 'text_domain' ),
+		'no_terms'                   => __( 'No Art Style', 'text_domain' ),
+		'items_list'                 => __( 'Art Style List', 'text_domain' ),
+		'items_list_navigation'      => __( 'Art Style list navigation', 'text_domain' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => false,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'art_style', array( 'studio' ), $args );
+}
+add_action( 'init', 'custom_taxonomy_art_styles', 0 );
+
+// Register Custom Taxonomy - Tools
+function custom_taxonomy_tools() {
+
+	$labels = array(
+		'name'                       => _x( 'Tools', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Tool', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Tool', 'text_domain' ),
+		'all_items'                  => __( 'All Tools', 'text_domain' ),
+		'parent_item'                => __( 'Parent Item', 'text_domain' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
+		'new_item_name'              => __( 'New Tool', 'text_domain' ),
+		'add_new_item'               => __( 'Add New Tool', 'text_domain' ),
+		'edit_item'                  => __( 'Edit Tool', 'text_domain' ),
+		'update_item'                => __( 'Update Tool', 'text_domain' ),
+		'view_item'                  => __( 'View Tool', 'text_domain' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
+		'add_or_remove_items'        => __( 'Add or remove Tool', 'text_domain' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
+		'popular_items'              => __( 'Popular Tools', 'text_domain' ),
+		'search_items'               => __( 'Search Tools', 'text_domain' ),
+		'not_found'                  => __( 'Not Found', 'text_domain' ),
+		'no_terms'                   => __( 'No Tool', 'text_domain' ),
+		'items_list'                 => __( 'Tool List', 'text_domain' ),
+		'items_list_navigation'      => __( 'Tool list navigation', 'text_domain' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => false,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'tools', array( 'studio' ), $args );
+
+}
+
+add_action( 'init', 'custom_taxonomy_tools', 0 );
+
+// Register Custom Taxonomy - Comission
+function custom_taxonomy_comission() {
+
+	$labels = array(
+		'name'                       => _x( 'Comissions', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Comission', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Comission', 'text_domain' ),
+		'all_items'                  => __( 'All Comissions', 'text_domain' ),
+		'parent_item'                => __( 'Parent Item', 'text_domain' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
+		'new_item_name'              => __( 'New Comission', 'text_domain' ),
+		'add_new_item'               => __( 'Add New Comission', 'text_domain' ),
+		'edit_item'                  => __( 'Edit Comission', 'text_domain' ),
+		'update_item'                => __( 'Update Comission', 'text_domain' ),
+		'view_item'                  => __( 'View Comission', 'text_domain' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
+		'add_or_remove_items'        => __( 'Add or remove Comission', 'text_domain' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
+		'popular_items'              => __( 'Popular Comissions', 'text_domain' ),
+		'search_items'               => __( 'Search Comissions', 'text_domain' ),
+		'not_found'                  => __( 'Not Found', 'text_domain' ),
+		'no_terms'                   => __( 'No Comission', 'text_domain' ),
+		'items_list'                 => __( 'Comission List', 'text_domain' ),
+		'items_list_navigation'      => __( 'Comission list navigation', 'text_domain' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => false,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'comission', array( 'studio' ), $args );
+
+}
+
+add_action( 'init', 'custom_taxonomy_comission', 0 );
+
+// Register Custom Taxonomy - Accomodation
+function custom_taxonomy_accomodation() {
+
+	$labels = array(
+		'name'                       => _x( 'Accomodations', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Accomodation', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Accomodation', 'text_domain' ),
+		'all_items'                  => __( 'All Accomodations', 'text_domain' ),
+		'parent_item'                => __( 'Parent Item', 'text_domain' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
+		'new_item_name'              => __( 'New Accomodation', 'text_domain' ),
+		'add_new_item'               => __( 'Add New Accomodation', 'text_domain' ),
+		'edit_item'                  => __( 'Edit Accomodation', 'text_domain' ),
+		'update_item'                => __( 'Update Accomodation', 'text_domain' ),
+		'view_item'                  => __( 'View Accomodation', 'text_domain' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
+		'add_or_remove_items'        => __( 'Add or remove Accomodation', 'text_domain' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
+		'popular_items'              => __( 'Popular Accomodations', 'text_domain' ),
+		'search_items'               => __( 'Search Accomodations', 'text_domain' ),
+		'not_found'                  => __( 'Not Found', 'text_domain' ),
+		'no_terms'                   => __( 'No Accomodation', 'text_domain' ),
+		'items_list'                 => __( 'Accomodation List', 'text_domain' ),
+		'items_list_navigation'      => __( 'Accomodation list navigation', 'text_domain' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => false,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'accomodation', array( 'studio' ), $args );
+
+}
+add_action( 'init', 'custom_taxonomy_accomodation', 0 );
