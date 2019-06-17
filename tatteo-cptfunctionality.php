@@ -463,3 +463,16 @@ function custom_taxonomy_accomodation() {
 
 }
 add_action( 'init', 'custom_taxonomy_accomodation', 0 );
+
+//*ADD CUSTOM POST TYPES TO SEARCH*//
+
+add_filter( 'pre_get_posts', 'custom_post_types_search' );
+function custom_post_types_search( $query ) {
+
+    if ( $query->is_search ) {
+	$query->set( 'post_type', array( 'artist', 'studio', 'guest_spot', 'event' ) );
+    }
+
+    return $query;
+
+}
