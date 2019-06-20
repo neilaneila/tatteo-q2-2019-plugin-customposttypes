@@ -52,7 +52,7 @@ function review_cpt() {
 		'label'                 => __( 'Review', 'text_domain' ),
 		'description'           => __( 'A post type that will contain a review of a studio by an artist or vice versa', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'revisions', 'custom-fields', 'page-attributes', 'post-formats', 'editor' ),
+		'supports'              => array( 'title', 'revisions', 'custom-fields', 'page-attributes', 'post-formats' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -103,13 +103,15 @@ function studios_cpt() {
 		'uploaded_to_this_item' => __( 'Uploaded to this studio', 'text_domain' ),
 		'items_list'            => __( 'Studios list', 'text_domain' ),
 		'items_list_navigation' => __( 'Studios list navigation', 'text_domain' ),
-		'filter_items_list'     => __( 'Filter Studios list', 'text_domain' ),
+    'filter_items_list'     => __( 'Filter Studios list', 'text_domain' ),
+    'item_published'        => __('Studio Profile created.', 'text-domain'),
+    'item_updated'          => __('Studio Profile updated.' , 'text-domain')
 	);
 	$args = array(
 		'label'                 => __( 'Studio', 'text_domain' ),
 		'description'           => __( 'A profile page for a tattoo studio', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'thumbnail', 'revisions', 'custom-fields', 'page-attributes', 'post-formats', 'editor' ),
+		'supports'              => array( 'title', 'thumbnail', 'revisions', 'custom-fields', 'page-attributes', 'post-formats', ),
 		'taxonomies'            => array( 'comission', 'tools', 'art_style', 'accomodation' ),
 		'hierarchical'          => true,
 		'public'                => true,
@@ -124,7 +126,7 @@ function studios_cpt() {
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'post',
-		'show_in_rest'          => true,
+    'show_in_rest'          => true,
 	);
 	register_post_type( 'studio', $args );
 
@@ -225,7 +227,7 @@ function guest_spot_cpt() {
 		'label'                 => __( 'Guestspot', 'text_domain' ),
 		'description'           => __( 'A page for a guestspot at a studio', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'thumbnail', 'revisions', 'custom-fields', 'page-attributes', 'post-formats', 'editor' ),
+		'supports'              => array( 'title', 'thumbnail', 'revisions', 'custom-fields', 'page-attributes', 'post-formats' ),
 		'taxonomies'            => array( 'category', 'post_tag' ),
 		'hierarchical'          => true,
 		'public'                => true,
@@ -277,13 +279,15 @@ function artist_cpt() {
 		'uploaded_to_this_item' => __( 'Uploaded to this sartist', 'text_domain' ),
 		'items_list'            => __( 'Artists list', 'text_domain' ),
 		'items_list_navigation' => __( 'Artists list navigation', 'text_domain' ),
-		'filter_items_list'     => __( 'Filter Artists list', 'text_domain' ),
+    'filter_items_list'     => __( 'Filter Artists list', 'text_domain' ),
+    'item_published'        => __('Artist Profile created.', 'text-domain'),
+    'item_updated'          => __('Artist Profile updated.' , 'text-domain')
 	);
 	$args = array(
 		'label'                 => __( 'Artist', 'text_domain' ),
 		'description'           => __( 'A profile page for a tattoo artist', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'thumbnail', 'revisions', 'custom-fields', 'page-attributes', 'post-formats', 'editor' ),
+		'supports'              => array( 'title', 'thumbnail', 'revisions', 'custom-fields', 'page-attributes', 'post-formats'),
 		'taxonomies'            => array('art_style'),
 		'hierarchical'          => true,
 		'public'                => true,
