@@ -65,7 +65,7 @@ function review_cpt() {
 		'has_archive'           => true,
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => true,
-		'capability_type'       => 'page',
+		'capability_type'       => 'post',
 		'show_in_rest'          => true,
 	);
 	register_post_type( 'review', $args );
@@ -123,7 +123,7 @@ function studios_cpt() {
 		'has_archive'           => true,
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => true,
-		'capability_type'       => 'page',
+		'capability_type'       => 'post',
 		'show_in_rest'          => true,
 	);
 	register_post_type( 'studio', $args );
@@ -159,9 +159,9 @@ function events_cpt() {
 		'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
 		'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
 		'uploaded_to_this_item' => __( 'Uploaded to this studio', 'text_domain' ),
-		'items_list'            => __( 'Studios list', 'text_domain' ),
-		'items_list_navigation' => __( 'Studios list navigation', 'text_domain' ),
-		'filter_items_list'     => __( 'Filter Studios list', 'text_domain' ),
+		'items_list'            => __( 'Events list', 'text_domain' ),
+		'items_list_navigation' => __( 'Events list navigation', 'text_domain' ),
+		'filter_items_list'     => __( 'Filter Events list', 'text_domain' ),
 	);
 	$args = array(
 		'label'                 => __( 'Event', 'text_domain' ),
@@ -239,7 +239,7 @@ function guest_spot_cpt() {
 		'has_archive'           => true,
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => true,
-		'capability_type'       => 'page',
+		'capability_type'       => 'post',
 		'show_in_rest'          => true,
 	);
 	register_post_type( 'guest_spot', $args );
@@ -297,7 +297,7 @@ function artist_cpt() {
 		'has_archive'           => true,
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => true,
-		'capability_type'       => 'page',
+		'capability_type'       => 'post',
 		'show_in_rest'          => true,
 	);
 	register_post_type( 'artist', $args );
