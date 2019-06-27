@@ -65,6 +65,7 @@ function review_cpt() {
 		'has_archive'           => true,
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => true,
+
 		'capability_type'       => 'page',
 		'show_in_rest'          => true,
 	);
@@ -304,7 +305,6 @@ function artist_cpt() {
 
 }
 add_action( 'init', 'artist_cpt', 0 );
-
 //*CUSTOM TAXONOMIES*//
 
 // Register Custom Taxonomy - Art Styles
